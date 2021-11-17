@@ -1,0 +1,21 @@
+{
+  "name": "fruit-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.1.3"
+  },
+  "directories": {
+    "npm test": "test"
+  },
+  "dependencies": {
+    "pg": "^8.7.1"
+  },
+  "description": ""
+}
