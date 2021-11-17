@@ -46,7 +46,7 @@ describe('The fruit Basket  app', function () {
         await fruits.updateBasket("Strawberries", 10)
 
 
-        assert.deepStrictEqual([{ fruit_type: 'Strawberries', qty: 15, price: '28.00' }], await fruits.findFruitBaskets('Strawberries'));
+        assert.deepStrictEqual([{ fruit_type: 'Strawberries', qty: 25, price: '28.00' }], await fruits.findFruitBaskets('Strawberries'));
 
     });
 
