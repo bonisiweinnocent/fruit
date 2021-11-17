@@ -32,7 +32,7 @@ module.exports = function fruitBasket(pool) {
     async function updateBasket(fruit, qty) {
 
 
-        pool.query('UPDATE fruit_basket SET qty = qty + $1 WHERE fruit_type = $2', [qty, fruit]);
+    await pool.query('UPDATE fruit_basket SET qty = qty + $1 WHERE fruit_type = $2', [qty, fruit]);
 
     }
 
