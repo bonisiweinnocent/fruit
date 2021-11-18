@@ -2,14 +2,6 @@ module.exports = function fruitBasket(pool) {
 
 
 
-    // async function newFruitBasket(types,quantity,price){
-
-    //     let newFruit = await pool.query('INSERT INTO fruit_basket (fruit_type,qty,price) VALUES ($1,$2,$3)'),[types,quantity,price];
-    //     return newFruit.rows
-    // }
-
-
-
 
     async function newFruitBasket(types, qtys, prices) {
         
@@ -17,9 +9,15 @@ module.exports = function fruitBasket(pool) {
                 await pool.query('INSERT INTO fruit_basket(fruit_type,qty,price) VALUES ($1,$2,$3)', [types, qtys, prices]);
 
             
-            return "pear inserted successfully"
+           
     }
 
+    async function getFruit(){
+
+
+        let baskets = await pool.query('SELECT fruit_type,qty,price FROM fruit_basket');
+        return baskets.rows
+    }
 
     async function findFruitBaskets(type) {
 
@@ -56,6 +54,7 @@ module.exports = function fruitBasket(pool) {
         updateBasket,
         showTotalPrice,
         totalPrice,
+        getFruit
 
         
 

@@ -24,9 +24,11 @@ describe('The fruit Basket  app', function () {
     var fruits = fruitBasket(pool);
 
     it('should be able to create a new fruit basket', async function () {
+        await fruits.newFruitBasket('Pear', 3, 9)
 
+        console.log( JSON.stringify(await fruits.getFruit())+'vvvvvvvvvvvv');
 
-        assert.strictEqual('pear inserted successfully', await fruits.newFruitBasket("pear", 3, 9))
+        assert.deepStrictEqual([{ fruit_type: 'Pear', qty: 3, price: '9.00' }], await fruits.getFruit())
 
 
     });
@@ -60,7 +62,7 @@ describe('The fruit Basket  app', function () {
     it('should be able show the sum of the total of the fruit baskets for a given fruit type', async function () {
         await fruits.newFruitBasket("Orange", 3, 9)
 
-        await fruits.findFruitBaskets('Orange')
+     
 
 
 
